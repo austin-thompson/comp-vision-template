@@ -67,6 +67,37 @@ python -m screen_reader.main --monitor 2 --box-method face_combo --live \
   --conf-thresh 0.5 --mp-min-conf 0.3 --scale 1.05 --min-neighbors 3
 ```
 
+---
+
+## Advanced Options & Debugging
+
+- **Suppress warnings and info messages:**  
+  Add `--suppress-warnings` to hide most terminal warnings and TensorFlow/MediaPipe info.
+
+- **Enable debug output:**  
+  Add `--debug` to print detection confidences and details for each frame.
+
+- **Log detection results to a file:**  
+  Add `--log-file detections.txt` to save detection results for later analysis.
+
+- **Show FPS in the window title:**  
+  Add `--show-fps` to display frames per second in the window title.
+
+**Examples:**
+
+```bash
+# MediaPipe with debug output and FPS
+python -m screen_reader.main --monitor 1 --box-method face_mp --live --debug --show-fps
+
+# MediaPipe with suppressed warnings and logging
+python -m screen_reader.main --monitor 1 --box-method face_mp --live --suppress-warnings --log-file mp_log.txt
+
+# MediaPipe with a custom confidence threshold
+python -m screen_reader.main --monitor 1 --box-method face_mp --live --mp-min-conf 0.5
+```
+
+---
+
 ## Configuration Parameters
 
 - `--box-method`: `saliency`, `face_haar`, `face_dnn`, `face_mp`, or `face_combo`
@@ -74,3 +105,4 @@ python -m screen_reader.main --monitor 2 --box-method face_combo --live \
 - Haar: `--scale`, `--min-neighbors`
 - DNN: `--conf-thresh`
 - MediaPipe: `--mp-min-conf`
+- Debugging: `--debug`, `--log-file`, `--show-fps`, `--suppress-warnings`
