@@ -28,4 +28,4 @@ def test_detect_face_mp_no_faces():
     img = np.zeros((100, 100, 3), dtype=np.uint8)
     results = processor.detect_face_mp(img, mp_min_conf=0.99)
     assert isinstance(results, list)
-    assert len(results)
+    assert len(results) == 0
