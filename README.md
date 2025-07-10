@@ -1,19 +1,26 @@
 # Screen Reader
 
 A real-time screen reader supporting:
-- **Saliency mode**: spectral residual saliency to highlight major objects
+
+- **Saliency**: spectral residual saliency to highlight major objects
 - **Face detection**:
   - **Haar Cascade** with CLAHE preprocessing (lightweight fallback)
   - **DNN** (ResNet-SSD) for robust detection
   - **MediaPipe** for real-time detection with CLAHE & optimized settings
   - **Ensemble (face_combo)**: union of DNN, MediaPipe, and Haar for maximal recall
 
+---
+
 ## Installation
 
-```bash
-pip install -r requirements.txt
-pip install mediapipe
-```
+1. **Create & activate a virtual environment** (highly recommended)
+
+   **Unix / macOS**
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
 ### DNN Model Setup
 
