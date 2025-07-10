@@ -3,3 +3,4 @@ numpy>=1.23
 opencv-contrib-python>=4.7
 pyautogui>=0.9.54
 mediapipe
+pytest
